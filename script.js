@@ -1,9 +1,10 @@
 function Account() {
     const model = document.getElementById("model-body");
+    // Create the grid
     const grid = document.createElement("div");
     grid.classList.add("row d-flex align-items-center justify-content-center");
     model.appendChild(grid);
-
+    // Create the row for image
     const row1 = document.createElement("div");
     row1.classList.add("col-md-5 col-lg-6 col-xl-5");
     const img = document.createElement("img");
@@ -12,13 +13,13 @@ function Account() {
     img.alt = "Login image";
     row1.appendChild(img);
     grid.appendChild(row1);
-
+    // Create the row for form
     const row2 = document.createElement("div");
     row2.classList.add("col-md-6 col-lg-4 col-xl-4 offset-xl-1");
     const form = document.createElement("form");
     grid.appendChild(row2);
     row2.appendChild(form);
-
+    // Create email input
     const email = document.createElement("div");
     const emailInput = document.createElement("input");
     const emailLabel = document.createElement("label");
@@ -32,7 +33,7 @@ function Account() {
     form.appendChild(email);
     email.appendChild(emailInput);
     email.appendChild(emailLabel);
-
+    // Create password input
     const password = document.createElement("div");
     const passwordInput = document.createElement("input");
     const passwordLabel = document.createElement("label");
@@ -46,12 +47,12 @@ function Account() {
     form.appendChild(password);
     password.appendChild(passwordInput);
     password.appendChild(passwordLabel);
-
+    // Create remember me checkbox
     const checkboxContainer = document.createElement("div");
     const checkbox = document.createElement("div");
     const remberMecheck = document.createElement("input");
     const remberMeLabel = document.createElement("label");
-    const forget
+    const forgotPassword = document.createElement("a");
     checkboxContainer.classList.add("d-flex justify-content-around align-items-center mb-4");
     checkbox.classList.add("form-check");
     remberMecheck.type = "checkbox";
@@ -60,9 +61,12 @@ function Account() {
     remberMeLabel.classList.add("form-check-label");
     remberMeLabel.for = "remberMecheck";
     remberMeLabel.innerHTML = "Remember me";
+    forgotPassword.href = "#!";
+    forgotPassword.innerHTML = "Forgot password?";
     form.appendChild(checkboxContainer);
     checkboxContainer.appendChild(checkbox);
     checkbox.appendChild(remberMecheck);
     checkbox.appendChild(remberMeLabel);
-
+    checkboxContainer.appendChild(forgotPassword);
+    
 }
