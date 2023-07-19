@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Consolas, Arial, Helvetica, sans-serif;
+}
+body {
+    background-image: url(../images/background_img2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* Hide Scrollbar without impacting scroll */
+body::-webkit-scrollbar {
+    display: none;
+}
+/* Scrollable page 1 */
+.content-1 {
+    width: 100%;
+    height: 100vh;
+}
+/* Logo with heading */
+.content-1 .heading {
+    font-size: 20px;
+}
+.green {
+    color: limegreen;
+}
+.content-1 .heading .logo img {
+    width: 80px;
+    height: auto;
+    vertical-align: middle;
+    cursor: none;
+}
+.content-1 .heading .logo h2 {
+    display: inline;
+    cursor: none;
+}
+.content-1 .heading nav {
+    /* Blur */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    /* Blur  */  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px 8% 10px 8%;
+}
+.content-1 .heading nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+/* Current Page Indicator */
+.content-1 .current-page {
+    font-size: 26px;
+    color: limegreen;
+}
+/* Animation for hyperlinks */
+.content-1 .heading nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    transition: font-size 0.3s ease-in-out;
+}
+/* Hyperlink enlarge when hover */
+.content-1 .heading nav ul li a:hover {
+    font-size: 26px;
+    text-shadow: 2px 2px 6px limegreen;
+}
+.content-1 .line {
+    display: flex;
+    justify-content: center;
+}
+.content-1 .heading hr {
+    width: 85%;
+    height: 1px;
+    background-color: black;
+    border: none;
+}
+/* Body Content */
+/* Feed 1 */
+.body .feed-1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 8%;
+}
+.body .feed-1 .img {
+    width: auto;
+    height: auto;
+    padding-right: 2.5%;
+}
+.body .feed-1 .img img {
+    width: 500px;
+    border-radius: 20px;
+}
+.body .feed-1 .text {
+    width: auto;
+    height: auto;
+    padding: 10px 2.5%;
+    border: limegreen inset;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.feed-1 .text ul li {
+    list-style: none;
+    padding: 10px 40px;
+    background-image: url(../images/leaf_bullet_pt.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 30px;
+}
+/* Feed 2 */
+.body .feed-2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 8%;
+}
+.body .feed-2 .img {
+    width: auto;
+    height: auto;
+    padding-left: 2.5%;
+}
+.body .feed-2 .img img {
+    width: 500px;
+    border-radius: 20px;
+}
+.body .feed-2 .text {
+    width: auto;
+    height: auto;
+    padding: 10px 2.5%;
+    border: limegreen inset;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.feed-2 .text ul li {
+    list-style: none;
+    padding: 10px 40px;
+    background-image: url(../images/leaf_bullet_pt.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 30px;
+}
+/* Feed 3 */
+.body .feed-3 {
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 8%;
+}
+.body .feed-3 .img {
+    width: auto;
+    height: auto;
+    padding-right: 2.5%;
+}
+.body .feed-3 .img img {
+    width: 500px;
+    border-radius: 20px;
+}
+.body .feed-3 .text {
+    width: auto;
+    height: auto;
+    padding: 10px 2.5%;
+    border: limegreen inset;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.feed-3 .text ul li {
+    list-style: none;
+    padding: 10px 40px;
+    background-image: url(../images/leaf_bullet_pt.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 30px;
+}
+/* Scrollable page 2 */
+.content-2 {
+    width: 100%;
+    padding: 100px 0;
+}
+/* Footer */
+footer {
+    width: 100%;
+    padding-top: 100px;
+}
+/* Footer Container 1 */
+.foot-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 8%;
+    background-color: white;
+    vertical-align: middle;
+}
+.foot-container .box1{
+    width: 100px;
+    height: auto;
+}
+.box1 p{
+    font-size: 20px;
+}
+.foot-container .box2 {
+    width: 400px;
+    height: auto;
+}
+.box2 p {
+    font-size: 40px;
+    text-decoration: underline yellow;
+    text-align: center;
+}
+.foot-container .box3 {
+    width: 100px;
+    height: auto;
+}
+.foot-container .box3 img {
+    width: 100%;
+    height: 100%;
+}
