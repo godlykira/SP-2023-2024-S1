@@ -1,0 +1,227 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Comic Sans MS', sans-serif;
+    box-sizing: border-box;
+}
+.body {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Heading Section */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 45px;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+.logo {
+    font-size: 35px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+span {
+    color: #00D100;
+}
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+nav ul li a:hover {
+    color: #00D100;
+}
+.btn {
+    background-color: #00D100;
+    color: black;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: transform .4s;
+}
+.btn:hover {
+    transform: scale(1.2);
+}
+
+/* Content Section */
+
+.content {
+    position: absolute;
+    top: 60%;
+    left: 8%;
+    transform: translateY(-50%);
+}
+.carbon {
+    width: 600px;
+    height: auto;
+    border-radius: 30px;
+    border-style: solid;
+}
+.about1 {
+    width: 600px;
+    background-color: lightblue;
+    opacity: 0.8;
+    border: #2E4F4F solid;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 8px 20px;
+}
+.card1 {
+    width: 720px;
+    float: right;
+    margin: auto 30px;
+    padding: 8px 20px;
+    background-color: lightblue;
+    opacity: 0.8;
+    border: #2E4F4F solid;
+    border-radius: 30px;
+}
+.card1 h3 {
+    font-size: 25px;
+    color: black;
+}
+.content div i {
+    font-size: 40px;
+    display: inline-block;
+    text-align: left;
+    color: #00D100;
+    vertical-align: middle;
+}
+.content p {
+    font-size: 16px;
+}
+.content .card-content h4 {
+    display: inline;
+}
+
+/* Reduce Waste section */
+
+.reduce-waste {
+    width: 100%;
+    padding: 100px 0px;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.waste {
+    width: 600px;
+    height: auto;
+    border: #2E4F4F solid;
+    border-radius: 30px;
+    float: right;
+    position: absolute;
+    left: 55%;
+}
+.card2 {
+    width: 720px;
+    margin: auto 50px;
+    padding: 8px 20px;
+    background-color: lightblue;
+    opacity: 0.8;
+    border: #2E4F4F solid;
+    border-radius: 30px;
+}
+.reduce-waste .card-content2  h4{
+    display: inline;
+}
+.reduce-waste .card-content2 i {
+    font-size: 40px;
+    display: inline-block;
+    text-align: left;
+    color: #00D100;
+    vertical-align: middle;
+}
+.about2 {
+    position: absolute;
+    left: 55%;
+    margin-top: 360px;
+    width: 600px;
+    background-color: lightblue;
+    opacity: 0.8;
+    border: #2E4F4F solid;
+    border-radius: 30px;
+    padding: 8px 20px;
+}
+.reduce-waste h3 {
+    font-size: 25px;
+    color: black;
+}
+
+/* Support Sustainable section */
+
+.sustainable {
+    width: 100%;
+    padding: 200px 0;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.sustainable-p {
+    width: 600px;
+    height: auto;
+    border: #2E4F4F solid;
+    border-radius: 30px;
+    margin-left: 80px;
+}
+.card3 {
+    width: 720px;
+    float: right;
+    margin: auto 30px;
+    padding: 8px 20px;
+    background-color: lightblue;
+    opacity: 0.8;
+    border: #2E4F4F solid;
+    border-radius: 30px;
+}
+.sustainable .card3 h4 {
+    display: inline;
+}
+.sustainable .card-content3 i {
+    font-size: 40px;
+    display: inline-block;
+    text-align: left;
+    color: #00D100;
+    vertical-align: middle;
+}
+.about3 {
+    width: 600px;
+    background-color: lightblue;
+    opacity: 0.8;
+    border: #2E4F4F solid;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-left: 80px;
+    padding: 8px 20px;
+}
+.card3 h3 {
+    font-size: 25px;
+    color: black;
+}
+
+/* Footer section */
+
+footer .end {
+    background-color: #00D100;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+}
