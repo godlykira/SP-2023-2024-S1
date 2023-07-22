@@ -76,11 +76,11 @@ function addMovieGenre(movieList) {
                 genres.push(temp);
             } else {
                 console.log("\tPlease enter a valid genre option(s)!");
-                return addMovieGenre();
+                return addMovieGenre(movieList);
             }
         } else {
             console.log("\tPlease enter a valid genre option(s)!");
-            return addMovieGenre();
+            return addMovieGenre(movieList);
         }
     }
     return genres.sort();
@@ -137,7 +137,7 @@ function showMovieList(msg, movieList) {
         return 0;
     } else {
         console.log("\n\tKindly enter a valid input!");
-        return showMovieList();
+        return showMovieList(msg, movieList);
     }
 }
 function updateMovieRating(index, movieList) {
@@ -221,14 +221,14 @@ function editMovie(index, movieList) {
                     tempData.name = readline.question("\n\tPlease enter new Movie's name: ");
                     console.log(`\n\tMovie's name successfully updated!\n${tempData.displayMovieDetails()}`);
                 } else if (choice == 2) {
-                    editGenre();
+                    editGenre(backupData);
                 } else if (choice == 3) {
                     editRtime();
                 } else if (choice == 4) {
                     editRdate();
                 } else if (choice == 5) {
                     tempData.rating[0] = readline.question("\n\tPlease enter new Movie's total votes: ");
-                    tempData.rating[1] = readline.question("\n\tPlease enter new Movie's total rating: ");
+                    tempData.rating[1] = readline.question("\n\tPlease enter new Movie's rating per voter: ");
                     console.log(`\n\tMovie's rating successfully updated!\n${tempData.displayMovieDetails()}`);
                 } else if (choice == 6) {
                     tempData.name = backupData[0];
@@ -251,7 +251,25 @@ function editMovie(index, movieList) {
             }
         } while (choice != 7);
     }
-    function editGenre() {
+    function editGenre(backupData) {
+        function getgenre(genre) {
+			var genreArr = [];
+			for (let i = 0; i < 9; i++) {
+				genreArr.push(getGenre(i + 1, movieList));
+			}
+			for (let i = 0; i < genre.length; i++) {
+				for (let j = 0; j < genreArr.length; j++) {
+					if (genre[i] == genreArr[j]) {
+						genreArr.splice(j, 1);
+					}
+				}
+			}
+			console.log("\n\tPlease enter new Movie's genre(s):");
+			genreArr.forEach((element, i) => {
+				console.log(`\t${i + 1}) ${element}`);
+			});
+            return genreArr;
+		}
         var genre = tempData.genre;
         var choice;
         while (true) {
@@ -271,44 +289,28 @@ function editMovie(index, movieList) {
         if (choice == genre.length+1) {
             do {
                 valid = false;
-                var genreArr = [
-                    { name: "Action", index: 0 },
-                    { name: "Adventure", index: 1 },
-                    { name: "Crime", index: 2 },
-                    { name: "Drama", index: 3 },
-                    { name: "Fantasy", index: 4 },
-                    { name: "Horror", index: 5 },
-                    { name: "Mystery", index: 6 },
-                    { name: "Sci-Fi", index: 7 },
-                    { name: "Thriller", index: 8 },
-                ];
-                for (let i = 0; i < genre.length; i++) {
-                    for (let j = 0; j < genreArr.length; j++) {
-                        if (genre[i] == genreArr[j].name) {
-                            genreArr.splice(j, 1);
+                const genreArr = getgenre(genre);
+                console.log(`\t${genreArr.length+1}) Go Back`);
+                const userInput = readline.question("\t>> ").split(/[ ,]+/);
+                if (!(userInput.includes(`${genreArr.length+1}`))) {
+                    const uniqueGenres = Array.from(new Set(userInput.sort()));
+                    for (const item of uniqueGenres) {
+                        const genreNum = parseInt(item);
+                        if (validation(genreNum, genreArr.length, 1)) {
+                            tempData.genre.push(genreArr[genreNum-1]);
+                            valid = true;
+                        } else {
+                            console.log("\tPlease enter a valid genre option(s)!");
+                            genre = backupData[1];
+                            valid = false;
                         }
                     }
-                }
-                console.log("\n\tPlease enter new Movie's genre(s):");
-                genreArr.forEach((element, i) => {
-                    console.log(`\t${i+1}) ${element.name}`);
-                });
-                const userInput = readline.question("\t>> ").split(/[ ,]+/);
-                const uniqueGenres = Array.from(new Set(userInput.sort()));
-                for (const item of uniqueGenres) {
-                    const genreNum = parseInt(item);
-                    if (validation(genreNum, genreArr.length, 1)) {
-                        tempData.genre.push(getGenre(genreArr[genreNum].index, movieList));
-                        valid = true;
-                    } else {
-                        console.log("\tPlease enter a valid genre option(s)!");
-                        genre = backupData[1];
-                        valid = false;
-                    }
+                } else {
+                    return editGenre(backupData);
                 }
                 if (valid) {
                     console.log(`\n\tMovie's genre successfully updated!\n${tempData.displayMovieDetails()}`);
-                    return editGenre();
+                    return editGenre(backupData);
                 }
             } while (!valid);
         } else if (choice != genre.length+2) {
@@ -317,15 +319,21 @@ function editMovie(index, movieList) {
                 console.log("\t1) Replace\n\t2) Delete\n\t3) Go Back to Main Menu");
                 const userInput = readline.question("\t>> ");
                 if (userInput == "1") {
-                    tempData.genre[choice-1] = addMovieGenre(movieList);
-                    console.log(`\n\tGenre replaced successfully!\n${tempData.displayMovieDetails()}`);
-                    return editGenre();
+                    const genreArr = getgenre(genre);
+                    const input = readline.question("\t>> ");
+                    if (input.length == 1 && validation(parseInt(input), genreArr.length, 1)) {
+                        tempData.genre[choice-1] = genreArr[input-1];
+                        console.log(`\n\tGenre replaced successfully!\n${tempData.displayMovieDetails()}`);
+                        return editGenre(backupData);
+                    } else {
+                        console.log("\tPlease enter a valid input!");
+                    }
                 } else if (userInput == "2") {
                     tempData.genre.splice(choice-1, 1);
                     console.log(`\n\tGenre deleted successfully!\n${tempData.displayMovieDetails()}`);
-                    return editGenre();
+                    return editGenre(backupData);
                 } else if (userInput == "3") {
-                    return editGenre();
+                    return editGenre(backupData);
                 } else {
                     console.log("\tPlease enter a valid input!");
                 }
@@ -420,55 +428,67 @@ do {
 			var Result = [];
 			if (search[0] === "-h") {
                 displayHelp();
+            } else if (search[0].slice(0, 1) != "-") {
+                Result.push(nameSearch(searchString, movieList));
+                Result.push(genreSearch(searchString, movieList));
+                Result.push(releaseDateSearch(searchString, movieList));
+                console.log(`\n\tYou search for "${searchString}"!`);
+                const temp_Name = Result[0];
+                const temp_Genre = Result[1];
+                const temp_Rdate = Result[2];
+                if (temp_Name.length !== undefined) {
+                    console.log(`\n\tMovie with name "${searchString}" found! - [${temp_Name.length}]`);
+                    for (let i = 0; i < temp_Name.length; i++) {
+                        console.log(`\t${i+1}) ${movieList[temp_Name[i]].name}`);
+                    }
+                } else {
+                    console.log(`\n\tMovie with name "${searchString}" not found!`);
+                }
+                if (temp_Genre.length !== undefined) {
+                    console.log(`\n\tMovie with genre "${searchString}" found! - [${temp_Genre.length}]`);
+                    for (let i = 0; i < temp_Genre.length; i++) {
+                        console.log(`\t${i+1}) ${movieList[temp_Genre[i]].name}`);
+                    }
+                } else {
+                    console.log(`\n\tMovie with genre "${searchString}" not found!`);
+                }
+                if (temp_Rdate.length !== undefined) {
+                    console.log(`\n\tMovie with release date "${searchString}" found! - [${temp_Rdate.length}]`);
+                    for (let i = 0; i < temp_Rdate.length; i++) {
+                        console.log(`\t${i+1}) ${movieList[temp_Rdate[i]].name}`);
+                    }
+                } else {
+                    console.log(`\n\tMovie with release date "${searchString}" not found!`);
+                }
             } else if (search[0] === "-m") {
                 const movieName = searchString.replace("-m ", "");
                 Result.push(nameSearch(movieName, movieList));
-                console.log(`\n\tYou search for ${searchString[3,searchString.length]}!`);
-                console.log(`\n\tMovie with name "${searchString[3,searchString.length]}" found! - [${tempName.length}]`);
                 const tempName = Result[0];
+                console.log(`\n\tYou search for movie name "${movieName}"!`);
+                console.log(`\n\tMovie with name "${movieName}" found! - [${tempName.length !== undefined ? tempName.length : 0}]`);
                 for (let i = 0; i < tempName.length; i++) {
-                    console.log(`${i+1}) ${movieList[tempName[i]].name}`);
+                    console.log(`\t${i+1}) ${movieList[tempName[i]].name}`);
                 }
             } else if (search[0] === "-g") {
                 const genre = searchString.replace("-g ", "");
                 Result.push(genreSearch(genre, movieList));
-                console.log(`\n\tYou search for ${searchString[3,searchString.length]}!`);
-                console.log(`\n\tGenre with name "${searchString[3,searchString.length]}" found! - [${tempGenre.length}]`);
                 const tempGenre = Result[0];
+                console.log(`\n\tYou search for genre "${genre}"!`);
+                console.log(`\n\tGenre with name "${genre}" found! - [${tempGenre.length !== undefined ? tempGenre.length : 0}]`);
                 for (let i = 0; i < tempGenre.length; i++) {
-                    console.log(`${i+1}) ${movieList[tempGenre[i]].name}`);
+                    console.log(`\t${i+1}) ${movieList[tempGenre[i]].name}`);
                 }
             } else if (search[0] === "-d") {
                 const releaseDate = searchString.replace("-d ", "");
                 Result.push(releaseDateSearch(releaseDate, movieList));
-                console.log(`\n\tYou search for ${searchString[3,searchString.length]}!`);
-                console.log(`\n\tRelease Date with name "${searchString[3,searchString.length]}" found! - [${tempRdate.length}]`);
                 const tempRdate = Result[0];
+                console.log(`\n\tYou search for release date "${releaseDate}"!`);
+                console.log(`\n\tRelease Date with name "${releaseDate}" found! - [${tempRdate.length !== undefined ? tempRdate.length : 0}]`);
                 for (let i = 0; i < tempRdate.length; i++) {
-                    console.log(`${i+1}) ${movieList[tempRdate[i]].name}`);
+                    console.log(`\t${i+1}) ${movieList[tempRdate[i]].name}`);
                 }
             } else if (search[0] === "-e") {
                 valid = true;
-            } else if (search[0] !== "-h" && search[0] !== "-m" && search[0] !== "-g" && search[0] !== "-d" && search[0] !== "-e") {
-                Result.push(nameSearch(searchString, movieList));
-                Result.push(genreSearch(searchString, movieList));
-                Result.push(releaseDateSearch(searchString, movieList));
-                console.log(`\n\tYou search for ${searchString}!`);
-                const temp_Name = Result[0];
-                const temp_Genre = Result[1];
-                const temp_Rdate = Result[2];
-                console.log(`\n\tMovie with name "${searchString}" found! - [${temp_Name.length !== undefined ? temp_Name.length : 0}]`);
-                for (let i = 0; i < temp_Name.length; i++) {
-                    console.log(`\t${i+1}) ${movieList[temp_Name[i]].name}`);
-                }
-                console.log(`\n\tGenre with name "${searchString}" found! - [${temp_Genre.length !== undefined ? temp_Genre.length : 0}]`);
-                for (let i = 0; i < temp_Genre.length; i++) {
-                    console.log(`\t${i+1}) ${movieList[temp_Genre[i]].name}`);
-                }
-                console.log(`\n\tRelease Date with name "${searchString}" found! - [${temp_Rdate.length !== undefined ? temp_Rdate.length : 0}]`);
-                for (let i = 0; i < temp_Rdate.length; i++) {
-                    console.log(`\t${i+1}) ${movieList[temp_Rdate[i]].name}`);
-                }
             } else {
                 console.log("\tPlease enter a valid input!");
             }            
@@ -500,7 +520,7 @@ do {
 				}
 			}
 			function genreSearch(userInput, movieList) {
-				const inputGenres = userInput.split(/[ ,]+/);
+				const inputGenres = userInput.toLowerCase().split(/[ ,]+/);
 				// Array to store filtered movies
 				const filteredIndex = [];
 				// Loop through each movie in the movieList
@@ -514,7 +534,7 @@ do {
 						let genreMatch = false;
 						// Loop through each genre of the current movie
 						for (let k = 0; k < movieGenres.length; k++) {
-							const genre = movieGenres[k];
+							const genre = movieGenres[k].toLowerCase();
 							// Check if the genre includes the input genre
 							if (genre.includes(inputGenre)) {
 								genreMatch = true;
@@ -540,18 +560,17 @@ do {
 				}
 			}
 			function releaseDateSearch(userInput, movieList) {
-				const inputDate = userInput.split(" ");
+				const inputDate = userInput.toLowerCase().split(" ");
 				const filteredIndex = [];
 				for (let i = 0; i < movieList.length; i++) {
 					const movie = movieList[i];
-					const movieDate = movie.releaseDate.split(" ");
+					const movieDate = movie.releaseDate.toLowerCase().split(" ");
 					let allDateMatch = true;
 					for (let j = 0; j < inputDate.length; j++) {
 						const userInputDate = inputDate[j];
 						let dateMatch = false;
 						for (let k = 0; k < movieDate.length; k++) {
 							const date = movieDate[k];
-
 							if (date.includes(userInputDate)) {
 								dateMatch = true;
 								break;
