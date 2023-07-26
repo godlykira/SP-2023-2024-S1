@@ -55,3 +55,4 @@ cards.forEach(card => {
     observer.observe(card);
 })
 
+// Login page

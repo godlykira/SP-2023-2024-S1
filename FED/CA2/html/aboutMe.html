@@ -52,6 +52,82 @@
             </div>
         </div>
     </nav>
+    <!-- Modal -->
+    <div class="container-lg d-flex justify-content-center align-items-center">
+        <div class="modal fade" id="ModalCenter" tabindex="-1" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalCenterTitle">
+                            Support Us
+                            <img src="../images/heart-angle-svgrepo-com.svg" alt="" width="30">
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container py-4 h-100">
+                            <div class="row d-flex align-items-center justify-content-center">
+                                <div class="col-md-5 col-lg-6 col-xl-5">
+                                    <img src="../images/plantTree.svg" class="img-fluid" alt="Login image">
+                                </div>
+                                <div class="col-md-6 col-lg-4 col-xl-4 offset-xl-1">
+                                    <form>
+                                        <!-- Email input -->
+                                        <div class="form-outline mb-2">
+                                            <input type="email" id="emailInput" class="form-control form-control-lg" />
+                                            <label class="form-label" for="emailInput">Email address</label>
+                                        </div>
+
+                                        <!-- Password input -->
+                                        <div class="form-outline mb-2">
+                                            <input type="password" id="passwordInput"
+                                                class="form-control form-control-lg" />
+                                            <label class="form-label" for="passwordInput">Password</label>
+                                        </div>
+
+                                        <div class="d-flex justify-content-around align-items-center mb-4">
+                                            <!-- Checkbox -->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="remberMecheck" unchecked />
+                                                <label class="form-check-label" for="remberMecheck"> Remember me
+                                                </label>
+                                            </div>
+                                            <a href="#!">Forgot password?</a>
+                                        </div>
+
+                                        <!-- Submit button -->
+                                        <button type="submit" class="btn btn-primary btn-lg w-100">Sign in</button>
+
+                                        <div class="divider d-flex align-items-center my-4">
+                                            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                                        </div>
+
+                                        <a class="btn btn-primary btn-lg w-100" style="background-color: #3b5998"
+                                            href="#!" role="button">
+                                            <i class="bi bi-facebook m-2"></i>Continue with Facebook
+                                        </a>
+                                        <a class="btn btn-primary btn-lg w-100" style="background-color: #55acee"
+                                            href="#!" role="button">
+                                            <i class="bi bi-twitter me-2"></i></i>Continue with Twitter</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="position-fixed bottom-0 end-0 p-lg-5">
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#ModalCenter">
+                <img src="../images/monitor-support-svgrepo-com.svg" alt="" width="40">
+            </button>
+        </div>
+    </div>
     <!-- Section -->
     <section class="sec">
         <div class="container-lg">
@@ -71,52 +147,42 @@
                     <img src="../images/profile.png" alt="" class="img-fluid img-rounded">
                 </div>
             </div>
+            <!-- Cards -->
             <div class="row">
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
-                      <div class="card h-100">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                          </p>
+                        <div class="card h-100">
+                            <img src="../images/badminton.webp" class="card-img-top" alt="Badminton" loading="lazy" />
+                            <div class="card-body">
+                                <h5 class="card-title">Badminton</h5>
+                                <p class="card-text">
+                                    Started playing badminton when I was 9 years old. Won 1 gold and 2 silver medals in
+                                    the school tournament.
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-footer">
-                          <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                      </div>
                     </div>
                     <div class="col">
-                      <div class="card h-100">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top" alt="Los Angeles Skyscrapers"/>
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <div class="card h-100">
+                            <img src="../images/cycling.jpg" class="card-img-top" alt="Cycling" loading="lazy" />
+                            <div class="card-body">
+                                <h5 class="card-title">Cycling</h5>
+                                <p class="card-text">Started cycling as a hobby when I was 8 years old.</p>
+                            </div>
                         </div>
-                        <div class="card-footer">
-                          <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                      </div>
                     </div>
                     <div class="col">
-                      <div class="card h-100">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top" alt="Palm Springs Road"/>
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to show
-                            that equal height action.
-                          </p>
+                        <div class="card h-100">
+                            <img src="../images/swimming.jpg" class="card-img-top" alt="Swimming" loading="lazy" />
+                            <div class="card-body">
+                                <h5 class="card-title">Swimming</h5>
+                                <p class="card-text">
+                                    Started swimming when I was 9 years old.
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-footer">
-                          <small class="text-muted">Last updated 3 mins ago</small>
-                        </div>
-                      </div>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
     </section>
@@ -124,8 +190,8 @@
         <div class="container">
             <footer class="py-3 my-4">
                 <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+                    <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+                    <li class="nav-item"><a href="./aboutMe.html" class="nav-link px-2 text-body-secondary">About</a></li>
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Sustainability</a></li>
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About SP</a></li>
                     <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact Us</a></li>
