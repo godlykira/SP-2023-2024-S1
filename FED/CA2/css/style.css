@@ -1,21 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap");
-
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "Lato", sans-serif;
-	font-family: "Roboto", sans-serif;
-}
-
-body::-webkit-scrollbar {
-	display: none;
-}
-
 /* Navbar */
-/* .navbar {
-    margin-bottom: 0px;
-} */
 .navbar ul li a {
 	font-size: 20px;
 	text-decoration: none;
@@ -34,19 +17,8 @@ body::-webkit-scrollbar {
 	background: #359391;
 	color: #fff;
 }
-/* Section 1 */
-.sec-1 {
-	height: 100vh;
-	margin: 0;
-	color: azure;
-}
 
-.sec-1 #text {
-	position: absolute;
-	color: #fff;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
+/* Index */
 .parallax {
 	position: relative;
 	display: flex;
@@ -65,80 +37,4 @@ body::-webkit-scrollbar {
 	pointer-events: none;
 	height: 100%;
 	object-fit: cover;
-}
-
-/* Section 2 */
-.sec-2 {
-	margin: 0;
-}
-.sec-2 .icon-link .bi {
-	width: 25px;
-	height: 25px;
-	object-fit: cover;
-}
-
-.sec-2 .Card {
-	transform: translateY(100px);
-	transition: transform 2s ease-in-out;
-	opacity: 0;
-}
-.sec-2 .Card.show {
-	transform: translateX(0);
-	opacity: 1;
-}
-
-/* About Me Style */
-.bg {
-	position: relative;
-	margin: 0;
-	padding: 0;
-}
-
-.bg::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: url("../images/background.JPG") center no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-	filter: blur(2px); /* Adjust the blur amount as needed */
-	z-index: -1;
-}
-.sec {
-	height: 100%;
-	margin: 0;
-	display: flex;
-	justify-content: center;
-}
-.sec .img-rounded {
-	border-radius: 5%;
-}
-.sec .text-area {
-	background: rgba(248, 248, 248, 0.5);
-	border-radius: 25px;
-}
-@media screen and (max-width: 768px) {
-	/* .sec {
-        height: 100vh;
-    } */
-	.sec .profile {
-		display: flex;
-		justify-content: center;
-	}
-	.sec .img-rounded {
-		border-radius: 100%;
-		width: 300px;
-		height: 300px;
-		object-fit: cover;
-	}
-	.sec .text-area {
-		background: none;
-		border-radius: 0;
-	}
-}
-section.footer {
-	background-color: #fff;
 }

@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Lato", sans-serif;
+	font-family: "Roboto", sans-serif;
+}
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.sec-1 {
+	height: 100vh;
+	margin: 0;
+	color: azure;
+}
+.sec-1 #text {
+	position: absolute;
+	color: #fff;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.sec-2 {
+	margin: 0;
+}
+.sec-2 .icon-link .bi {
+	width: 25px;
+	height: 25px;
+	object-fit: cover;
+}
+.sec-2 .Card {
+	transform: translateY(100px);
+	transition: transform 2s ease-in-out;
+	opacity: 0;
+}
+.sec-2 .Card.show {
+	transform: translateX(0);
+	opacity: 1;
+}

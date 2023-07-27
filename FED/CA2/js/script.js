@@ -41,6 +41,9 @@ for (let i = 0; i < description.length; i++) {
   }, speed * i);
 }
 
+// Leading page scroll animation
+
+
 // Landing page card animation
 const cards = document.querySelectorAll(".Card");
 const observer = new IntersectionObserver(entries => {
@@ -55,4 +58,3 @@ cards.forEach(card => {
     observer.observe(card);
 })
 
-// Login page
