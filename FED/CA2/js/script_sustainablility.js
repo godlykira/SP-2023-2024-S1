@@ -70,40 +70,6 @@ var data = [
 	},
 ];
 
-function createContent(index, text) {
-	carousel.classList.add("hide");
-    container.style.backgroundImage = `url(${data[index].background})`;
-	// Create accordion content alwayes open
-    const div = document.createElement("div");
-	div.classList.add("accordion");
-	div.id = "accordionPannelsStayOpen";
-	for (let i = 0; i < data.length; i++) {
-		const div = document.createElement("div");
-		div.classList.add("accordion-item");
-		const h2 = document.createElement("h2");
-		h2.classList.add("accordion-header");
-		h2.id = `${i+1}`;
-		const button = document.createElement("button");
-		button.classList.add("accordion-button");
-		button.type = "button";
-		button.setAttribute("data-bs-toggle", "collapse");
-		button.setAttribute("data-bs-target", `#${i+1}`);
-		button.setAttribute("aria-expanded", "true");
-		button.setAttribute("aria-controls", `${i+1}`);
-		button.innerHTML = data[i].heading;
-		h2.appendChild(button);
-		div.appendChild(h2);
-		const body = document.createElement("div");
-		body.id = `${i+1}`;
-		body.classList.add("accordion-collpse collapse show");
-		body.setAttribute("aria-labelledby", `${i+1}`);
-		const bodyContainer = document.createElement("div");
-		bodyContainer.classList.add("accordion-body");
-
-	}
-
-}
-
 document.addEventListener("DOMContentLoaded", function () {
 	const carousel = document.getElementById("carouselCaptions");
 	const carouselItems = Array.from(carousel.querySelectorAll(".carousel-item"));

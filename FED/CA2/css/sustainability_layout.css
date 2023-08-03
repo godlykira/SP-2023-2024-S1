@@ -50,6 +50,14 @@ body::-webkit-scrollbar {
     filter: brightness(1);
 }
 
+.sec-2 #content-1 {
+    background-image: url("../images/reduce_carbon.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
 .hide {
     left: 100%;
 }
