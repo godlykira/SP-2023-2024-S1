@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Lato", sans-serif;
+	font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.sec-1 {
+    height: 100vh;
+    background-image: url("../images/sustainability.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.sec-1 .text-block {
+    padding: 3px;
+}
+@media (max-width: 768px) {
+    .sec-1 .text-block {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 3%;
+    }
+    .sec-1 .row {
+        background: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.sec-2 {
+    height: 100vh;
+    overflow: hidden;
+}
+.sec-2 #carouselCaptions .carousel-item img {
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    height: 100vh;
+    transition: transform 2s ease;
+    filter: brightness(0.5);
+}
+.sec-2 #carouselCaptions .carousel-item img:hover {
+    transform: scale(1.1);
+    filter: brightness(1);
+}
+
+.hide {
+    left: 100%;
+}
