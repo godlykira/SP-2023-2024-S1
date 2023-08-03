@@ -35,6 +35,7 @@ body::-webkit-scrollbar {
 
 .sec-2 {
     height: 100vh;
+    overflow: hidden;
 }
 .sec-2 #carouselCaptions .carousel-item img {
     object-fit: cover;
