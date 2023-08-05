@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Lato", sans-serif;
+	font-family: "Roboto", sans-serif;
+}
+body::-webkit-scrollbar {
+	display: none;
+}
+
+.sec-1 {
+    height: 80vh;
+    margin: 0;
+    color: azure;
+    background-image: url("../images/sp_img.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.sec-1 div {
+    border-radius: 25px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.sec-2 {
+    height: 100%;
+    margin: 0;
+    background-image: url("../images/background_vector.jpg");
+}

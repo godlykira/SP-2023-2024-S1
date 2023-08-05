@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/aboutSP_layout.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <title>Greenfiy | About SP</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Offcanvas navbar large">
+        <div class="container-fluid">
+            <a class="navbar-brand col-lg-4 me-0" href="#">
+                <img src="../images/bird_Logo.svg" alt="" class="bi me-2" width="80">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-light" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <div class="offcanvas-title" id="offcanvasNavbarLabel">
+                        <img src="../images/bird_Logo.svg" alt="" class="bi me-2" width="60">
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav me-auto flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a href="../html/index.html" class="nav-link" aria-current="page">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../html/aboutMe.html" class="nav-link">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../html/sustainability.html" class="nav-link">Sustainability</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../html/aboutSP.html" class="nav-link current">About SP</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Modal -->
+    <div class="container-lg d-flex justify-content-center align-items-center">
+        <div class="modal fade" id="ModalCenter" tabindex="-1" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalCenterTitle">
+                            Support Us
+                            <img src="../images/heart-angle-svgrepo-com.svg" alt="" width="30">
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container py-4 h-100">
+                            <div class="row d-flex align-items-center justify-content-center">
+                                <div class="col-md-5 col-lg-6 col-xl-5">
+                                    <img src="../images/plantTree.svg" class="img-fluid" alt="Login image">
+                                </div>
+                                <div class="col-md-6 col-lg-4 col-xl-4 offset-xl-1">
+                                    <form>
+                                        <!-- Email input -->
+                                        <div class="form-floating mb-2">
+                                            <input type="email" class="form-control" id="floatingInput"
+                                                placeholder="name@example.com">
+                                            <label for="floatingInput">Email address</label>
+                                        </div>
+
+                                        <!-- Password input -->
+                                        <div class="form-floating mb-2">
+                                            <input type="password" class="form-control" id="floatingPassword"
+                                                placeholder="Password">
+                                            <label for="floatingPassword">Password</label>
+                                        </div>
+
+                                        <div class="d-flex justify-content-around align-items-center mb-4">
+                                            <!-- Checkbox -->
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value=""
+                                                    id="remberMecheck" unchecked />
+                                                <label class="form-check-label" for="remberMecheck"> Remember me
+                                                </label>
+                                            </div>
+                                            <a href="#!">Forgot password?</a>
+                                        </div>
+
+                                        <!-- Submit button -->
+                                        <button type="submit" class="btn btn-primary btn-lg w-100" id="submit">Sign
+                                            in</button>
+
+                                        <div class="divider d-flex align-items-center my-4">
+                                            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                                        </div>
+
+                                        <a class="btn btn-primary btn-lg w-100" style="background-color: #3b5998"
+                                            href="#!" role="button">
+                                            <i class="bi bi-facebook m-2"></i>Continue with Facebook
+                                        </a>
+                                        <a class="btn btn-primary btn-lg w-100" style="background-color: #55acee"
+                                            href="#!" role="button">
+                                            <i class="bi bi-twitter me-2"></i></i>Continue with Twitter</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="position-fixed bottom-0 end-0 p-lg-5">
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#ModalCenter">
+                <img src="../images/monitor-support-svgrepo-com.svg" alt="" width="40">
+            </button>
+        </div>
+    </div>
+    <!-- Section -->
+    <section class="sec-1">
+        <div class="container-md py-5 position-absolute top-50 start-50 translate-middle">
+            <h1 class="display-1">What SP has done?</h1>
+            <p class="lead">Singapore Polytechnic (SP) has been at the forefront of driving sustainability initiatives
+                and promoting
+                environmentally conscious practices within its campus and beyond. As one of Singapore's leading
+                polytechnics, SP has taken significant steps to integrate sustainability into its operations,
+                curriculum,
+                and community engagement efforts. With a strong commitment to environmental stewardship and sustainable
+                development, SP has emerged as a beacon of sustainability, setting an inspiring example for other
+                educational institutions and organizations to follow.</p>
+        </div>
+    </section>
+    <section class="sec-2">
+        <div class="container-md py-md-5">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card mb-3">
+                        <img src="../images/green_campus.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title display-6">Green Campus</h5>
+                            <p class="card-text lead">SP has taken steps to create a greener campus environment. It has implemented eco-friendly infrastructure, such as the installation of solar panels on rooftops, rainwater harvesting systems, and energy-efficient lighting systems.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card mb-3">
+                        <img src="../images/bicycle.JPG" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title display-6">Sustainable Transportation</h5>
+                            <p class="card-text lead">SP encourages sustainable transportation methods among its community. It provides bicycle parking facilities and promotes cycling as an alternative mode of transport. The polytechnic also organizes carpooling initiatives to reduce the number of vehicles on campus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card mb-3">
+                        <img src="../images/waste-management.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title display-6">Recycling and Waste Management</h5>
+                            <p class="card-text lead">The polytechnic has a comprehensive waste management system in place. It promotes recycling by providing recycling bins across the campus and encourages students and staff to segregate their waste properly. SP also organizes recycling campaigns and educational programs to raise awareness about waste reduction and recycling.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="../html/index.html" class="nav-link px-2 text-body-secondary">Home</a>
+                </li>
+                <li class="nav-item"><a href="../html/aboutMe.html" class="nav-link px-2 text-body-secondary">About</a>
+                </li>
+                <li class="nav-item"><a href="../html/sustainability.html"
+                        class="nav-link px-2 text-body-secondary">Sustainability</a></li>
+                <li class="nav-item"><a href="../html/aboutSP.html" class="nav-link px-2 text-body-secondary">About
+                        SP</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact Us</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">&copy; 2023 Save The Earth, Greenfiy Inc</p>
+        </footer>
+    </div>
+</body>
+
+</html>
