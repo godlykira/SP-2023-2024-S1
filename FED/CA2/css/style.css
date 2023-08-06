@@ -38,3 +38,9 @@
 	height: 100%;
 	object-fit: cover;
 }
+
+.hide-form {
+    position: absolute;
+    overflow: hidden;
+    left: 200%;
+}

@@ -33,10 +33,13 @@ body::-webkit-scrollbar {
     }
 }
 
-.sec-2 {
+.sec-2{
     height: 100vh;
     overflow: hidden;
+    transform: translateX(0);
+    transition: transform 2s ease-in;
 }
+
 .sec-2 #carouselCaptions .carousel-item img {
     object-fit: cover;
     object-position: center;
@@ -50,6 +53,42 @@ body::-webkit-scrollbar {
     filter: brightness(1);
 }
 
+.sec-2 #content-1 {
+    background-image: url("../images/reduce_carbon.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.sec-2 #content-2 {
+    background-image: url("../images/minimize_waste.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.sec-2 #content-3 {
+    background-image: url("../images/promote_sustainablility.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.sec-2 #content-1 li,
+.sec-2 #content-2 li,
+.sec-2 #content-3 li {
+    list-style: none;
+    padding: 10px 40px;
+    background-image: url(../images/leaf_bullet_pt.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 30px;
+}
+
 .hide {
-    left: 100%;
+    position: absolute;
+    transform: translateX(200%);
 }
