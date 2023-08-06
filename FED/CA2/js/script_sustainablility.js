@@ -79,16 +79,17 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Attach click event listeners to each carousel item
 	carouselItems.forEach((item, index) => {
 		item.addEventListener("click", function () {
-			console.log("Clicked image index:", index);
+			// console.log("Clicked image index:", index);
 			current = index;
 			loadcontent(index);
 		});
 	});
-	carousel.addEventListener("slid.bs.carousel", function (event) {
-		const activeSlide = event.relatedTarget; // The current active slide
-		const activeIndex = carouselItems.indexOf(activeSlide);
-		console.log("Current image index:", activeIndex);
-	});
+	// For debugging purpose
+	// carousel.addEventListener("slid.bs.carousel", function (event) {
+	// 	const activeSlide = event.relatedTarget; // The current active slide
+	// 	const activeIndex = carouselItems.indexOf(activeSlide);
+	// 	console.log("Current image index:", activeIndex);
+	// });
 });
 
 function trigger() {
@@ -100,8 +101,8 @@ function returnBack(contentArr, current) {
 	contentArr[current].classList.add("hide");
 }
 
-function loadcontent(click) {
-	switch (click) {
+function loadcontent(index) {
+	switch (index) {
 		case 0: {
 			carousel.classList.add("hide");
 			content_1.classList.remove("hide");

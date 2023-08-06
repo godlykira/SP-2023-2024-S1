@@ -66,54 +66,72 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="container py-4 h-100">
+
+                        <div class="container py-4 h-100" id="form-content-1">
                             <div class="row d-flex align-items-center justify-content-center">
                                 <div class="col-md-5 col-lg-6 col-xl-5">
                                     <img src="../images/plantTree.svg" class="img-fluid" alt="Login image">
                                 </div>
                                 <div class="col-md-6 col-lg-4 col-xl-4 offset-xl-1">
-                                    <form>
-                                        <!-- Email input -->
-                                        <div class="form-floating mb-2">
-                                            <input type="email" class="form-control" id="floatingInput"
-                                                placeholder="name@example.com">
-                                            <label for="floatingInput">Email address</label>
-                                        </div>
-
-                                        <!-- Password input -->
-                                        <div class="form-floating mb-2">
-                                            <input type="password" class="form-control" id="floatingPassword"
-                                                placeholder="Password">
-                                            <label for="floatingPassword">Password</label>
-                                        </div>
-
+                                    <form class="row g-3">
                                         <div class="d-flex justify-content-around align-items-center mb-4">
-                                            <!-- Checkbox -->
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="remberMecheck" unchecked />
-                                                <label class="form-check-label" for="remberMecheck"> Remember me
-                                                </label>
-                                            </div>
-                                            <a href="#!">Forgot password?</a>
+                                            <img src="../images/bird_Logo.svg" alt="" width="100">
+                                        </div>
+
+                                        <!-- Email input -->
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Recipient's Email" aria-label="Recipient's username" id="input1" required>
+                                            <!-- <span class="input-group-text" id="basic-addon2"> -->
+                                                <select class="form-select input-group-text" id="inputGroupSelect01">
+                                                    <option value="1">@gmail.com</option>
+                                                    <option value="2">@ichat.sp.edu.sg</option>
+                                                    <option value="3">@yahoo.com</option>
+                                                    <option value="4">@outlook.com</option>
+                                                </select>
+                                            <!-- </span> -->
                                         </div>
 
                                         <!-- Submit button -->
-                                        <button type="submit" class="btn btn-primary btn-lg w-100" id="submit">Sign
-                                            in</button>
-
-                                        <div class="divider d-flex align-items-center my-4">
-                                            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
-                                        </div>
-
-                                        <a class="btn btn-primary btn-lg w-100" style="background-color: #3b5998"
-                                            href="#!" role="button">
-                                            <i class="bi bi-facebook m-2"></i>Continue with Facebook
-                                        </a>
-                                        <a class="btn btn-primary btn-lg w-100" style="background-color: #55acee"
-                                            href="#!" role="button">
-                                            <i class="bi bi-twitter me-2"></i></i>Continue with Twitter</a>
+                                        <button type="button" class="btn btn-primary btn-lg w-100" id="submit-1">
+                                            Continue
+                                        </button>
                                     </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container py-4 h-100 hide-form" id="form-content-2">
+                            <div class="row d-flex align-items-center justify-content-center">
+                                <div class="col-md-4 col-lg-5 col-xl-4 d-flex justify-content-center">
+                                    <img src="../images/gpt_support.jpg" alt="gpt_support" width="300">
+                                </div>
+                                <div class="col-md-8 col-lg-6 col-xl-6 d-block justify-content-center">
+                                    <form class="row g-3 needs-validation" novalidate>
+                                        <div class="col-md-4">
+                                            <label for="validationCustom01" class="form-label">First name</label>
+                                            <input type="text" class="form-control" id="validationCustom01" required>
+                                            <div class="invalid-feedback">
+                                                Please enter your first name.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="validationCustom02" class="form-label">Last name</label>
+                                            <input type="text" class="form-control" id="validationCustom02" required>
+                                            <div class="invalid-feedback">
+                                                Please enter your last name.
+                                            </div>
+                                        </div>
+                                        <label for="customRange1" class="form-label">Rate My Website</label>
+                                        <input type="range" class="form-range" id="customRange1">
+                                        <div class="form-floating mb-3">
+                                            <textarea class="form-control" id="validationCustom03" style="height: 100px" placeholder="Leave a comment here" required></textarea>
+                                            <label for="validationCustom03">Comment</label>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-primary" type="submit">Submit form</button>
+                                        </div>
+                                    </form>
+
                                 </div>
                             </div>
                         </div>
@@ -552,6 +570,7 @@
         </footer>
     </div>
     <script src="../js/script_sustainablility.js"></script>
+    <script src="../js/form.js"></script>
 </body>
 
 </html>

@@ -26,12 +26,12 @@ const descElement = document.getElementById("description");
 const sec2Element = document.getElementById("sec-2header");
 for (let i = 0; i < title.length; i++) {
   setTimeout(() => {
-    titleElement.textContent += title.charAt(i);
+    titleElement.innerHTML += title.charAt(i);
   }, titlespeed * i);
 }
 for (let i = 0; i < description.length; i++) {
   setTimeout(() => {
-    descElement.textContent += description.charAt(i);
+    descElement.innerHTML += description.charAt(i);
     if (i === description.length - 1) {
       setTimeout(() => {
         sec2Element.scrollIntoView({ block: "start", behavior: "smooth", inline: "nearest" });
