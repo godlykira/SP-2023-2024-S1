@@ -221,7 +221,17 @@ function editMovie(index, movieList) {
             var choice = readline.question("\t>> ");
             if (validation(choice) && validation(parseInt(choice), 7, 1)) {
                 if (choice == 1) {
-                    tempData.name = readline.question("\n\tPlease enter new Movie's name: ");
+                    var valid = false;
+                    var moviename;
+                    do {
+                        var moviename = readline.question("\n\tPlease enter new Movie's name: ");
+                        // Check if the movie name is unique (every() is the same as for loop and uses function (movie))
+                        valid = movieList.every(movie => movie.name.toLowerCase() != moviename.toLowerCase() && moviename != "");
+                        if (!valid) {
+                            console.log("\tPlease enter a unique movie name!");
+                        }
+                    } while (!valid);
+                    tempData.name = moviename;
                     console.log(`\n\tMovie's name successfully updated!\n${tempData.displayMovieDetails()}`);
                 } else if (choice == 2) {
                     editGenre(backupData);
